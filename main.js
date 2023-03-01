@@ -1,4 +1,15 @@
 import './style.css';
+import { WebContainer } from '@webcontainer/api';
+import { files } from './files';
+/** @type {import('@webcontainer/api').WebContainer} */
+let webcontainerInstance;
+
+window.addEventListener('load', async () => {
+  textareaEl.value = files['index.js'].file.contents;
+  // Call only once
+  webcontainerInstance = await WebContainer.boot();
+  await webcontainerInstance.mount(files);
+});
 
 document.querySelector('#app').innerHTML = `
 <div class = "container">
