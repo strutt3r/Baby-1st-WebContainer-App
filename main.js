@@ -10,3 +10,9 @@ document.querySelector('#app').innerHTML = `
   </div>
 </div>
 `;
+
+/** @type {HTMLIFrameElement | null} */
+const iframeEl = document.querySelector('iframe');
+
+/** @type {HTMLTextAreaElement | null} */
+const textareaEl = document.querySelector('textarea');
